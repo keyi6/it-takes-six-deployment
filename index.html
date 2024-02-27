@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+        <title>It Takes Six</title>
+        <link rel="stylesheet" href="https://blog.keyi-li.com/css/main.css">
+    </head>
+
+    <body>
+        <header class="header">
+            <div class="site-brand-container">
+                <div class="site-meta">
+                    <a href="#" class="brand" rel="start">
+                        <i class="logo-line"></i>
+                        <h1 class="site-title" style="opacity: 1; top: 0px;">CSCI 526</h1>
+                        <i class="logo-line"></i>
+                    </a>
+                </div>
+            </div>
+        </header>
+
+        <main style="padding: 70px 10px; max-width: 700px; margin: auto">
+            <ul id="list"></ul>
+        </main>
+    </body>
+
+    <script>
+        (() => {
+            const list = document.querySelector("#list");
+            [
+                { buildDate: "02/24" },
+            ].forEach(({ buildDate }) => {
+                let href = "";
+                let name = "";
+
+                if (buildDate) {
+                    name = `Build on ${buildDate}`;
+                    href = `${buildDate.replace("/", "")}/index.html`;
+                }
+
+                const t = document.createElement("li");
+                const a = document.createElement("a");
+
+                a.innerHTML = name;
+                a.href = href;
+
+                t.appendChild(a);
+                list.appendChild(t);
+            });
+        })();
+    </script>
+</html>
