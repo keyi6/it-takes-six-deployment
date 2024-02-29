@@ -32,16 +32,20 @@
             const list = document.querySelector("#list");
             [
                 { buildDate: "02/28" },
-                { buildDate: "02/27" },
+                { buildDate: "02/27", alias: "Alpha Progress Check" },
                 { buildDate: "02/26" },
                 { buildDate: "02/24" },
-            ].forEach(({ buildDate }) => {
+            ].forEach(({ buildDate, alias }) => {
                 let href = "";
                 let name = "";
 
                 if (buildDate) {
                     name = `Build on ${buildDate}`;
                     href = `${buildDate.replace("/", "")}/index.html`;
+                }
+
+                if (alias) {
+                    name = `${name}, ${alias}`;
                 }
 
                 const t = document.createElement("li");
