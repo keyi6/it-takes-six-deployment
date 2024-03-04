@@ -1,4 +1,4 @@
 # It Takes Six Deployment
 
-Page deployed by GitHub pages on [https://it-takes-six.keyi-li.com](https://it-takes-six.keyi-li.com).
+Page deployed by GitHub pages on [http://keyi6.github.io/it-takes-six-deployment/](http://keyi6.github.io/it-takes-six-deployment/).
 
