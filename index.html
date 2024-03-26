@@ -31,7 +31,9 @@
         (() => {
             const list = document.querySelector("#list");
             [
-                { buildName: "0325-debug" },
+                { buildDate: "03/26", isDebug: true },
+                { buildDate: "03/26" },
+                { buildDate: "03/25", isDebug: true },
                 { buildDate: "03/25" },
                 { buildDate: "03/22" },
                 { buildDate: "03/21" },
@@ -50,13 +52,18 @@
                 { buildDate: "02/27", alias: "Alpha Progress Check" },
                 { buildDate: "02/26" },
                 { buildDate: "02/24" },
-            ].forEach(({ buildDate, alias, version, buildName }) => {
+            ].forEach(({ buildDate, alias, version, buildName, isDebug }) => {
                 let href = "";
                 let name = "";
 
                 if (buildDate) {
                     name = `Build on ${buildDate}`;
                     href = `${buildDate.replace("/", "")}`;
+                }
+
+                if (isDebug) {
+                    name = `${name}, debug version`;
+                    href = `${href}-debug`;
                 }
 
                 if (version) {
