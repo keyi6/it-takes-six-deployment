@@ -23,6 +23,13 @@
         </header>
 
         <main style="padding: 70px 10px; max-width: 700px; margin: auto">
+            <h2>Links</h2>
+            <ul>
+                <li><a href="https://github.com/CSCI-526/spring-2024-project-tuesday-it-takes-six" target="_blank">Code Repo</a></li>
+                <li><a href="https://docs.google.com/document/d/1aoh0whD78ehy-JBsMjMUWaDOC73BhlLLSwFn-zQJ95A/edit#heading=h.a9b0ccipo4zv" target="_blank">Game Design Document</a></li>
+            </ul>
+
+            <h2>Version List</h2>
             <ul id="list"></ul>
         </main>
     </body>
@@ -63,6 +70,9 @@
                 { buildDate: "02/26" },
                 { buildDate: "02/24" },
             ].forEach(({ buildDate, alias, version, buildName, isDebug }) => {
+                if (!window.location.search.includes("showAll")
+                    && (version || isDebug)) return;
+
                 let href = "";
                 let name = "";
 
@@ -86,7 +96,7 @@
                 }
 
                 if (buildName) {
-                    name = buildName;
+                    name = `<b>${buildName}</\b>`;
                     href = buildName.toLowerCase();
                 }
 
